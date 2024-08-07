@@ -5,7 +5,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         guard let currentQuestion = currentQuestion else {
             return
         }
-        let givenAnswer = true
+        let givenAnswer = false
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
@@ -13,7 +13,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         guard let currentQuestion = currentQuestion else {
             return
         }
-        let givenAnswer = false
+        let givenAnswer = true
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     @IBOutlet private var imageView: UIImageView!
@@ -27,7 +27,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     private var currentQuestionIndex = 0
     private var correctAnswers = 0
     private var alertPresenter: AlertPresenterProtocol?
-    private var statisticService: StatisticService?
+    private var statisticService: StatisticServiceProtocol?
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,7 +128,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
             let text = """
                                   Ваш результат: \(correctAnswers)/\(questionsAmount)
                                   Количество сыгранных квизов: \(totalGamesCount)
-                                  Рекорд: \(currentCorrectRecord)/\(currentTotalRecord) (\(bestGameDate)
+                                  Рекорд: \(currentCorrectRecord)/\(currentTotalRecord) (\(bestGameDate))
                                   Средняя точность: \(totalAccuracyPercentage)
                                   """
             
