@@ -3,31 +3,27 @@ import XCTest
 
 final class MovieQuizViewControllerMock: MovieQuizViewControllerProtocol {
     func show(quiz step: MovieQuiz.QuizStepViewModel) {
-        <#code#>
     }
     
     func show(quiz result: MovieQuiz.QuizResultsViewModel) {
-        <#code#>
     }
     
     func highlightImageBorder(isCorrectAnswer: Bool) {
-        <#code#>
     }
     
     func showLoadingIndicator() {
-        <#code#>
     }
     
     func hideLoadingIndicator() {
-        <#code#>
+        
     }
     
     func toggleButtonsActivity() {
-        <#code#>
+        
     }
     
     func showNetworkError(message: String) {
-        <#code#>
+        
     }
 }
 

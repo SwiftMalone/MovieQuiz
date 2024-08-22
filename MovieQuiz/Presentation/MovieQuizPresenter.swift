@@ -50,7 +50,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
     
     
     
-    func makeResultsMessage() -> String {
+    private func makeResultsMessage() -> String {
         statisticService.store(correct: correctAnswers, total: questionsAmount)
         
         let bestGame = statisticService.bestGame
@@ -105,7 +105,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
             viewController?.toggleButtonsActivity()
         }
     }
-
+    
     private func isLastQuestion() -> Bool {
         currentQuestionIndex == questionsAmount - 1
     }

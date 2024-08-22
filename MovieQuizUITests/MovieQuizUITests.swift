@@ -2,7 +2,6 @@ import XCTest
 @testable import MovieQuiz
 
 final class MovieQuizUITests: XCTestCase {
-    // swiftlint:disable:next implicitly_unwrapped_optional
     var app: XCUIApplication!
 
     override func setUpWithError() throws {
