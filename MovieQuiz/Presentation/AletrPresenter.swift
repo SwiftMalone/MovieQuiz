@@ -1,9 +1,9 @@
 import UIKit
 
 final class AlertPresenter: AlertPresenterProtocol {
-    weak var delegate: UIViewController?
+    weak var delegate: AlertPresenterDelegate?
     
-    init(delegate: UIViewController?) {
+    init(delegate: AlertPresenterDelegate?) {
         self.delegate = delegate
     }
     
@@ -15,11 +15,12 @@ final class AlertPresenter: AlertPresenterProtocol {
             preferredStyle: .alert)
         let action = UIAlertAction(
             title: model.buttonText,
-            style: .default) { _ in
-                model.completion()
-            }
+            style: .default,
+            handler: { _ in
+                model.completion?()
+            })
         alert.addAction(action)
-        delegate?.present(alert, animated: true, completion: nil)
+        self.delegate?.show(alert: alert)
     }
 }
 
